@@ -24,7 +24,5 @@ int main(void)
 		fib2 = sum;
 	}
 	printf("%.0f\n", total);
-	
 	return (0);
-
 }
