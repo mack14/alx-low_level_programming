@@ -1,39 +1,20 @@
 #include "main.h"
 
 /**
- * helper - Finds the square root of two numbers
+ * _pow_recursion - returns the value of @x raised to the power of @y
  *
- * @a: The number
- * @b: The number to test for the square root of @a
+ * @x: number
+ * @y: the power to raise @n to
  *
- * Return: square root
+ * Return: the value of @x to the @y power
  */
 
-int helper(int a, int b)
+int _pow_recursion(int x, int y)
 {
-	if (b * b > a)
+	if (y < 0)
 		return (-1);
+	if (y == 0)
+		return (1);
 
-	else if (b * b == a)
-		return (b);
-
-	else
-		return (helper(a, b + 1));
-
-	return (1);
-}
-
-/**
- * _sqrt_recursion - returns the natural square root of a number
- *
- * @n: the number to return the square root of
- *
- * Return: the square root of @n
- */
-
-int _sqrt_recursion(int n)
-{
-	if (n == 0)
-		return (0);
-	return (helper(n, 1));
+	return (x * (_pow_recursion(x, y - 1)));
 }
